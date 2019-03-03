@@ -42,9 +42,9 @@ void showCharacters(char* buffer, ulong offset) {
 	
     for(uint i = 0; i < BytesPerLine; i++) {
         if( (unsigned)buffer[i + offset] < AsciiThreshold )
-			cout << '.';
+		cout << '.';
         else
-			cout << buffer[i + offset];
+		cout << buffer[i + offset];
     }
 	
 	cout << "|\n";

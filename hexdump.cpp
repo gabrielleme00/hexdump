@@ -58,6 +58,7 @@ int main(int argc, char *argv[]) {
 	char* buffer;		// Buffer for the file data
 	char fileName[FileNameBufferSize];
 	
+	// Read arguments
 	if (argc == 2) {
 		strcpy(fileName, argv[1]);
 	} else if (argc == 1) {
@@ -94,7 +95,7 @@ int main(int argc, char *argv[]) {
 	}
 	
 	ifs.close();
-    delete[] buffer;
+	delete[] buffer;
 	
 	return 0;
 }

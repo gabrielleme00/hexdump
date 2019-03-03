@@ -51,11 +51,11 @@ void showCharacters(char* buffer, ulong offset) {
 }
  
 int main(int argc, char *argv[]) {
-	ifstream ifs;									// Input file stream
-	ulong offset = 0;								// Address offset
-	filebuf* pbuf;									// File stream buffer
-	size_t size;									// File size
-	char* buffer;									// Buffer for the file data
+	ifstream ifs;		// Input file stream
+	ulong offset = 0;	// Address offset
+	filebuf* pbuf;		// File stream buffer
+	size_t size;		// File size
+	char* buffer;		// Buffer for the file data
 	char fileName[FileNameBufferSize];
 	
 	if (argc == 2) {
@@ -68,15 +68,15 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 	
-	ifs.open(fileName, ifstream::binary); 			// Open file in binary mode
-	pbuf = ifs.rdbuf();								// Get pointer to associated buffer object
+	ifs.open(fileName, ifstream::binary); 		// Open file in binary mode
+	pbuf = ifs.rdbuf();				// Get pointer to associated buffer object
 	size = pbuf->pubseekoff(0, ifs.end, ifs.in); 	// Get file size using buffer's members
-	buffer = new char[size];						// Allocate memory to contain file data
+	buffer = new char[size];			// Allocate memory to contain file data
 	
-	pbuf->pubseekpos(0, ifs.in);					// Set internal position pointer to absolute position
-	pbuf-> sgetn (buffer, size);					// Get file data
+	pbuf->pubseekpos(0, ifs.in);			// Set internal position pointer to absolute position
+	pbuf-> sgetn (buffer, size);			// Get file data
 	
-	cout << hex << setfill('0');					// Set output to hexadecimal
+	cout << hex << setfill('0');			// Set output to hexadecimal
 	    
 	showHeaders();
 	

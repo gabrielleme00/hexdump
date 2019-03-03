@@ -40,12 +40,12 @@ void showHexCodes(char* buffer, ulong offset, ulong bytesLeft) {
 void showCharacters(char* buffer, ulong offset) {
 	cout << "  |";
 	
-    for(uint i = 0; i < BytesPerLine; i++) {
-        if( (unsigned)buffer[i + offset] < AsciiThreshold )
-		cout << '.';
-        else
-		cout << buffer[i + offset];
-    }
+	for(uint i = 0; i < BytesPerLine; i++) {
+		if( (unsigned)buffer[i + offset] < AsciiThreshold )
+			cout << '.';
+		else
+			cout << buffer[i + offset];
+	}
 	
 	cout << "|\n";
 }

@@ -4,11 +4,11 @@
 #include <string.h>
 
 typedef unsigned long ulong;
-typedef unsigned int uint;
+typedef unsigned int  uint;
 
 const uint FileNameBufferSize = 256;
-const uint AsciiThreshold = 32; // Characters until code 32 cannot be shown
-const uint BytesPerLine = 16;
+const uint AsciiThreshold     = 32; // Characters until code 32 cannot be shown
+const uint BytesPerLine       = 16;
 
 using namespace std;
 
